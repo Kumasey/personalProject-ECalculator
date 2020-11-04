@@ -1,3 +1,4 @@
+// assignment of operators to their corresponding values
 const calculate = (n1, operator, n2) => {
   const firstNum = parseFloat(n1)
   const secondNum = parseFloat(n2)
@@ -91,6 +92,7 @@ const updateCalculatorState = (key, calculator, calculatedValue, displayedNum) =
       : displayedNum
   }
 
+  //Setting the value of AC to empty string
   if (keyType === 'clear' && key.textContent === 'AC') {
     calculator.dataset.firstValue = ''
     calculator.dataset.modValue = ''
@@ -99,6 +101,7 @@ const updateCalculatorState = (key, calculator, calculatedValue, displayedNum) =
   }
 }
 
+// for the interchanging of CE and AC
 const updateVisualState = (key, calculator) => {
   const keyType = getKeyType(key)
   Array.from(key.parentNode.children).forEach(k => k.classList.remove('is-depressed'))
@@ -111,10 +114,12 @@ const updateVisualState = (key, calculator) => {
   }
 }
 
+//selection of html classes
 const calculator = document.querySelector('.calculator')
 const display = calculator.querySelector('.calculator__display')
 const keys = calculator.querySelector('.calculator__keys')
 
+//litening to events
 keys.addEventListener('click', e => {
   if (!e.target.matches('button')) return
   const key = e.target
