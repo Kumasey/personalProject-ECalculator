@@ -110,7 +110,7 @@ const updateVisualState = (key, calculator) => {
   if (keyType === 'clear' && key.textContent !== 'AC') key.textContent = 'AC'
   if (keyType !== 'clear') {
     const clearButton = calculator.querySelector('[data-action=clear]')
-    clearButton.textContent = 'CE'
+    clearButton.textContent = 'C'
   }
 }
 
